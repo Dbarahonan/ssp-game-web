@@ -1,1 +1,18 @@
-<p>stone-scissors-paper works!</p>
+<mat-card class="ssp-card">
+    <h2>Stone, Paper, Scissors</h2>
+  
+    <div *ngIf="loading">Loading...</div>
+  
+    <div *ngIf="!playerChoice && !loading" class="buttons">
+      <button mat-raised-button color="primary" *ngFor="let option of options" (click)="play(option)">
+        {{ option }}
+      </button>
+    </div>
+  
+    <div *ngIf="playerChoice && !loading" class="results">
+      <p>Your choice: {{ playerChoice }}</p>
+      <p>Computer: {{ computerChoice }}</p>
+      <h3>{{ result }}</h3>
+      <button mat-stroked-button color="accent" (click)="reset()">Play Again</button>
+    </div>
+  </mat-card>
