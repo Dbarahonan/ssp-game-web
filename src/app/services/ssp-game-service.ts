@@ -11,8 +11,8 @@ export class SspGameService {
   
   constructor(private http: HttpClient) {}
 
-  play(move: string, strategyName: string = 'RANDOM') {
-    return  this.http.post<any>(`${BASE_API_URL}/play`, { move, strategyName });
+  play(playerMove: string, strategyName: string = 'RANDOM') {
+    return  this.http.post<any>(`${BASE_API_URL}/play`, { playerMove, strategyName });
   }
 
 }

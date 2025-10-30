@@ -13,21 +13,33 @@ import { SspGameService } from '../../services/ssp-game-service';
   standalone: true
 })
 export class StoneScissorsPaper {
-  options = ['Stone', 'Paper', 'Scissors'];
-  playerChoice: string | null = null;
-  computerChoice: string | null = null;
+  options = ['STONE', 'PAPER', 'SCISSORS'];
+  playerMove : string = '';
+  computerMove: string = '';
   result: string | null = null;
   loading = false;
 
   constructor(private sspService: SspGameService) {}
 
-  play(choice: string) {
+  play(move: string) {
     this.loading = true;
+    this.sspService.play(move, 'RANDOM').subscribe({
+      next: (res) => {
+        this.playerMove = move;
+        this.computerMove = res.computerMove;
+        this.result = res.result;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.loading = false;
+      },
+    });
   }
 
   reset() {
-    this.playerChoice = null;
-    this.computerChoice = null;
+    this.playerMove = '';
+    this.computerMove = '';
     this.result = null;
   }
 
