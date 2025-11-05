@@ -116,16 +116,6 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 yarn test
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-yarn e2e
-```
-
-Note: Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
 ## Application Structure
 
 The application is organized as follows:
