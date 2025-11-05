@@ -1,0 +1,10 @@
+<div class="opponent-select" [formGroup]="oponentTypeForm">
+    <mat-button-toggle-group formControlName="opponent" class="opponent-toggle">
+      <mat-button-toggle value="RANDOM" matTooltip="Play against random moves">
+        <mat-icon>casino</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="IA" matTooltip="Play against AI">
+        <mat-icon>smart_toy</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>

@@ -11,7 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-stone-scissors-paper',
-  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, MatButtonToggleModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule],
   templateUrl: './stone-scissors-paper.html',
   styleUrl: './stone-scissors-paper.scss',
   standalone: true
