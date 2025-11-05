@@ -9,10 +9,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { OponentType } from './oponent-type/oponent-type';
 import { MoveOptions } from './move-options/move-options';
+import { Result } from './result/result';
 
 @Component({
   selector: 'app-stone-scissors-paper',
-  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule, OponentType, MoveOptions],
+  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule, OponentType, MoveOptions, Result],
   templateUrl: './stone-scissors-paper.html',
   styleUrl: './stone-scissors-paper.scss',
   standalone: true

@@ -1,29 +1,30 @@
 <mat-card class="ssp-card">
-  <app-oponent-type
-      [(opponentType)]="opponentType"
-      class="opponent-select">
-  </app-oponent-type>
+    <app-oponent-type
+        [(opponentType)]="opponentType"
+        class="opponent-select">
+    </app-oponent-type>
  
-  <h2>Stone, Paper, Scissors</h2>
-  
-  <div *ngIf="loading" class="loading-container">
-    <mat-progress-spinner
-      mode="indeterminate"
-      diameter="50"
-      color="primary">
-    </mat-progress-spinner>
-  </div>
-  
-  <div *ngIf="!playerMove && !loading">
+    <h2>Stone, Paper, Scissors</h2>
+    
     <app-move-options
-      (selectedOptionChange)="play($event)">
+       *ngIf="!playerMove && !loading"
+       (selectedOptionChange)="play($event)">
     </app-move-options>
-  </div>
-  
-    <div *ngIf="playerMove && !loading" class="results">
-      <p>Your choice: {{ playerMove }}</p>
-      <p>Computer: {{ computerMove }}</p>
-      <h3>{{ result }}</h3>
-      <button mat-stroked-button color="accent" (click)="reset()"> <mat-icon>autorenew</mat-icon>Play Again</button>
+    
+    <div *ngIf="loading" class="loading-container">
+      <mat-progress-spinner
+        mode="indeterminate"
+        diameter="50"
+        color="primary">
+      </mat-progress-spinner>
     </div>
+    
+    <app-result
+      *ngIf="playerMove && !loading"
+      [playerMove]="playerMove"
+      [computerMove]="computerMove"
+      [result]="result"
+      (playAgain)="reset()">
+    </app-result>
+
   </mat-card>

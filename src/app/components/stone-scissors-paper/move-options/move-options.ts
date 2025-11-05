@@ -10,7 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './move-options.scss'
 })
 export class MoveOptions {
-  @Input() selectedOption: any;
   @Output() selectedOptionChange = new EventEmitter<'STONE' | 'PAPER' | 'SCISSORS'>();
 
   options = [
