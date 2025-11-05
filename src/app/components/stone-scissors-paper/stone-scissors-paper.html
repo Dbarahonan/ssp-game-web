@@ -4,8 +4,9 @@
     <div *ngIf="loading">Loading...</div>
   
     <div *ngIf="!playerMove && !loading" class="buttons">
-      <button mat-raised-button color="primary" *ngFor="let option of options" (click)="play(option)">
-        {{ option }}
+      <button mat-raised-button color="primary" *ngFor="let option of options" (click)="play(option.name)">
+        <mat-icon>{{ option.icon }}</mat-icon>
+        {{ option.name }}
       </button>
     </div>
   

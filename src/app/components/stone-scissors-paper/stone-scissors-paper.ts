@@ -13,7 +13,11 @@ import { SspGameService } from '../../services/ssp-game-service';
   standalone: true
 })
 export class StoneScissorsPaper {
-  options = ['STONE', 'PAPER', 'SCISSORS'];
+  options = [
+    { name: 'STONE', icon: 'landscape' },
+    { name: 'PAPER', icon: 'description' },
+    { name: 'SCISSORS', icon: 'content_cut' }
+  ];
   playerMove : string = '';
   computerMove: string = '';
   result: string | null = null;
