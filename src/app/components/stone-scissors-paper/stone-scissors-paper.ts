@@ -4,10 +4,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { SspGameService } from '../../services/ssp-game-service';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { FormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-stone-scissors-paper',
-  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, MatButtonToggleModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule],
   templateUrl: './stone-scissors-paper.html',
   styleUrl: './stone-scissors-paper.scss',
   standalone: true
@@ -22,12 +26,13 @@ export class StoneScissorsPaper {
   computerMove: string = '';
   result: string | null = null;
   loading = false;
+  opponentType: 'IA' | 'RANDOM' = 'RANDOM';
 
   constructor(private sspService: SspGameService) {}
 
   play(move: string) {
     this.loading = true;
-    this.sspService.play(move, 'RANDOM').subscribe({
+    this.sspService.play(move, this.opponentType).subscribe({
       next: (res) => {
         this.playerMove = move;
         this.computerMove = res.computerMove;

@@ -13,3 +13,24 @@
     margin: 0.5rem 0;
   }
   
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+  }
+  
+  .opponent-select {
+    display: center;
+    align-items: center;
+  }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+  }
