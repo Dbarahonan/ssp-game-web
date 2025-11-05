@@ -1,0 +1,10 @@
+<div class="buttons">
+    <button
+      mat-raised-button
+      color="primary"
+      *ngFor="let option of options"
+      (click)="selectOption(option.name)">
+      <mat-icon>{{ option.icon }}</mat-icon>
+      {{ option.name }}
+    </button>
+  </div>

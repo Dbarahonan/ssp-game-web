@@ -1,25 +1,24 @@
 <mat-card class="ssp-card">
-    <app-oponent-type
+  <app-oponent-type
       [(opponentType)]="opponentType"
       class="opponent-select">
   </app-oponent-type>
  
   <h2>Stone, Paper, Scissors</h2>
   
-    <div *ngIf="loading" class="loading-container">
-      <mat-progress-spinner
-        mode="indeterminate"
-        diameter="50"
-        color="primary">
-      </mat-progress-spinner>
-    </div>
+  <div *ngIf="loading" class="loading-container">
+    <mat-progress-spinner
+      mode="indeterminate"
+      diameter="50"
+      color="primary">
+    </mat-progress-spinner>
+  </div>
   
-    <div *ngIf="!playerMove && !loading" class="buttons">
-      <button mat-raised-button color="primary" *ngFor="let option of options" (click)="play(option.name)">
-        <mat-icon>{{ option.icon }}</mat-icon>
-        {{ option.name }}
-      </button>
-    </div>
+  <div *ngIf="!playerMove && !loading">
+    <app-move-options
+      (selectedOptionChange)="play($event)">
+    </app-move-options>
+  </div>
   
     <div *ngIf="playerMove && !loading" class="results">
       <p>Your choice: {{ playerMove }}</p>

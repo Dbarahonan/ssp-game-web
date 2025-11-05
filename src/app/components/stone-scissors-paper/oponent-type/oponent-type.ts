@@ -2,10 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-oponent-type',
-  imports: [CommonModule, ReactiveFormsModule, MatButtonToggleModule],
+  imports: [CommonModule, ReactiveFormsModule, MatButtonToggleModule, MatIconModule, MatTooltipModule],
   templateUrl: './oponent-type.html',
   styleUrl: './oponent-type.scss',
   standalone: true

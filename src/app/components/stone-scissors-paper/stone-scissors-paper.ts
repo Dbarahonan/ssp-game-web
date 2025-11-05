@@ -4,14 +4,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { SspGameService } from '../../services/ssp-game-service';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { OponentType } from './oponent-type/oponent-type';
+import { MoveOptions } from './move-options/move-options';
 
 @Component({
   selector: 'app-stone-scissors-paper',
-  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, MatIconModule, FormsModule, MatTooltipModule, MatProgressSpinnerModule, OponentType, MoveOptions],
   templateUrl: './stone-scissors-paper.html',
   styleUrl: './stone-scissors-paper.scss',
   standalone: true
@@ -30,7 +31,7 @@ export class StoneScissorsPaper {
 
   constructor(private sspService: SspGameService) {}
 
-  play(move: string) {
+  play(move: any) {
     this.loading = true;
     this.sspService.play(move, this.opponentType).subscribe({
       next: (res) => {
